@@ -1,0 +1,20 @@
+*{
+    font-family: 'Raleway', sans-serif;
+}
+#container > h1{
+    text-align: center;
+}
+#carousel{
+    position: relative;
+    width: 80%;
+    margin: 10px auto;
+}
+#carousel img{
+    max-width: 100%;
+    display: block;
+    margin: 10px auto;
+}
+#description{
+    width: 80%;
+    margin : auto
+}

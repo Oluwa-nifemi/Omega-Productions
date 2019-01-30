@@ -1,0 +1,52 @@
+#container > h1{
+    font-size: 2.5em;
+    text-align: center;
+    font-family: 'PT Sans', sans-serif;
+    margin-top: 0;
+}
+.work img{
+    width: 70%;
+    margin: auto;
+    display: block;
+}
+.work h2{
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+}
+.work a{
+    color: black;
+    text-decoration: none;
+}
+#pages{
+    display: flex;
+    margin: auto;
+    width: fit-content;
+}
+#pages a{
+    height: 30px;
+    width: 30px;
+    transition: 500ms;
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: black
+}
+#pages a:hover,#pages a.active{
+    background-color: limegreen;
+    color: white;
+
+}
+#pages .link img:last-child{
+    display: none;
+}
+#pages .link:hover img:first-child{
+    display: none;
+}
+#pages .link:hover img:last-child{
+    display: block;
+}
+#pages img{
+    height: 100%;
+}

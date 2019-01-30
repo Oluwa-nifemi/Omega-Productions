@@ -1,0 +1,72 @@
+#container{
+    padding: 0 175px 20px;
+    box-sizing: border-box;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+}
+#display_image{
+    width: 100%;
+}
+nav + h1{
+    font-size: 3em;
+    text-align: center;
+    font-family: 'Nunito',sans-serif;
+}
+#desc li{
+    font-family: 'Nunito',sans-serif;
+    font-size: 1.25em;
+    margin: 10px 0;
+}
+#desc li:first-child{
+    margin-top: 0
+}
+.pricesheader{
+    font-size: 4em;
+    text-align: center;
+    font-family: 'Nunito',sans-serif;
+    grid-column: 1/3;
+    margin: 0;
+}
+.pricecategory .pricecategory-header{
+    font-family: 'Nunito',sans-serif;
+    text-align: center;
+}
+table{
+    margin: auto;
+    border-collapse: collapse;
+    font-family: 'Nunito',sans-serif;
+}
+tr{
+    height: 50px;
+}
+tr:nth-of-type(2n){
+    background-color: rgba(128, 128, 128, 0.09);
+}
+tr td{
+    text-align: center;
+    border: 1px solid #dee2e6;
+    width: 100px;
+}
+tr td:nth-of-type(2){
+    padding: 10px;
+    min-width: 200px;
+    width: fit-content;
+}
+.split{
+    height: 1px;
+    background-color: rgba(0,0,0,0.25);
+    margin: 20px 0 10px;
+    grid-column: 1/3;
+}
+.contact-us{
+    font-family: 'Nunito',sans-serif;
+    padding: 50px;
+}
+.contact-us h1{
+    text-align: center;
+}
+.contact-us a{
+    color: black;
+}

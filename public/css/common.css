@@ -1,0 +1,116 @@
+body{
+    margin: 0;
+}
+nav{
+    display: flex;
+    padding: 25px 50px;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 2;
+    box-shadow: 0 0 2rem #0000004f;
+}
+#logo{
+    margin-right: auto;
+}
+#logo img{
+    height: 65px;
+    vertical-align: middle;
+}
+#nav-links{
+    display: flex;
+    align-items: center;
+}
+#nav-links a{
+    margin: 0 10px;
+    font-size: 1.25em;
+    font-family: 'Nunito', sans-serif;
+    text-decoration: none;
+    color: black;
+}
+#nav-links a:hover{
+    text-decoration: underline;
+}
+footer{
+    display: grid;
+    grid-template-columns: 1.5fr 1.2fr 1.5fr;
+    font-family: 'Nunito', sans-serif;             
+    padding: 40px;
+    background-color: black;
+    color: gray;
+}
+#address{    
+    padding: 10px 20px;
+    width: 55%;
+}
+#address p{
+    font-size: 1.3em;
+    margin: 10px 0;
+}
+#address p.number{
+    font-size: 1.65em;
+    font-family: 'PT Sans', sans-serif;
+    color: yellow;
+}
+#connect div{
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+#connect p{
+    margin: 20px 0 10px;
+    font-size: 1.75em;
+}
+#connect a{
+    padding: 10px;
+}
+#connect img{
+    height: 40px;
+    width: 40px;
+}
+#connect a:last-child img{
+    height: 60px;
+    width: 60px;
+}
+#newsletter{
+    padding: 10px;
+}
+#newsletter p{
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+#newsletter form{
+    display: flex;
+    overflow: hidden;
+    border-radius: 20px;
+    width: fit-content;
+    height: 38px;
+    background-color: white;
+}
+#newsletter form input{
+    width: 350px;
+    border: none;
+    font-family: 'Nunito', sans-serif;             
+    font-size: 1.2em;
+    padding-left: 15px;
+    box-sizing: border-box; 
+    height: 100%;           
+}
+#newsletter form button{
+    background-color: #28a745;
+    border: none;
+    width: 35px;  
+    height: 35px;
+    border-radius: 50%;                      
+    margin: 2px;
+}
+#newsletter form img{
+    height: 20px;
+}
+#container{
+    padding: 50px 75px;
+    width: 100%;
+    box-sizing: border-box;
+}
+button,a{
+    cursor: pointer;
+}

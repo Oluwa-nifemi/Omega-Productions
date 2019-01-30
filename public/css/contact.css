@@ -1,0 +1,35 @@
+#container > h1{
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    font-size: 2.5em;
+}
+#contact{
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 50px;
+}
+#contact .form-group{
+    display: flex;
+    width: 80%;
+    align-items: center;
+    padding: 5px 20px;
+}
+#contact label{
+    font-size: 2.5em;
+    width: 20%;
+    display: inline-block;
+}
+#contact input,#contact textarea{
+    height: 30px;
+    flex-grow: 0;
+    width: 70%;
+    font-size: 1.2em;
+    font-family: 'Nunito', sans-serif;
+    outline: none;
+}
+#contact div:last-child{
+    align-items: unset;
+}
+#contact textarea{
+    vertical-align: top;
+    height: 350px;
+}

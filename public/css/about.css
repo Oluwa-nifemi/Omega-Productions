@@ -1,0 +1,81 @@
+#container #abouth1{
+    font-size: 3.5em;
+    font-family: 'Nunito', sans-serif;
+}
+#container p{
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.4em;
+}
+.header{
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    width: 100%;
+    font-size: 3.5em;
+    position: relative;
+    margin: 15px 0;
+}
+.split{
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.25)
+}
+#brands > div{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding-top: 20px;
+}
+.brand{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#reviews{
+    margin-bottom: 25px;
+    position: relative;
+}
+#reviews > div{
+    display: flex;
+    width: 87%;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    margin: auto;
+}
+#reviews .review{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 350px;
+    opacity: 0.5;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+#reviews .review.active{
+    opacity: 1;
+}
+#reviews .review img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+#reviews .review h1,#reviews .review p{
+    margin: 10px 0;
+}
+#reviews button{
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    flex-grow: 0;
+    flex-shrink: 0;
+    opacity: 0.75;
+    z-index: 2;
+    top: 40%;
+    outline: none;
+}
+#reviews button img{
+    height: 40px;
+    width: 50px;
+}
+#nextrev{
+    right: 0;
+}

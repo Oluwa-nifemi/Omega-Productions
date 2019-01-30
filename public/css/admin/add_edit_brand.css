@@ -1,0 +1,38 @@
+form{
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+}
+form label,form input{
+    font-size: 1.5em;
+    font-family: 'Raleway', sans-serif;
+    display: inline-block
+}
+form label{
+    width: 100px;
+}
+form input{
+    width: 70%;
+    border-radius: 7px;
+    border: 1px solid rgba(0,0,0,0.25);
+    outline : none;
+    box-sizing: border-box
+}
+form input[type = 'text']{
+    padding-left: 7px;
+}
+form div{
+    margin: 10px 0;
+}
+form button{
+    border: none;
+    background-color: rgb(114, 214, 236);
+    color: white;
+    height: 30px;
+    width: 90px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-family: 'Raleway', sans-serif;
+    float: right;
+    margin-right: 20%;
+}

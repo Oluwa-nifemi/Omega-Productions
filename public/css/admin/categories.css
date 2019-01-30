@@ -1,0 +1,62 @@
+*{
+    font-family: 'Raleway' , sans-serif !important;
+}
+form{
+    width: 500px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form input{
+    margin: 0 5px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid rgb(201, 201, 201);
+    width: 200px;
+}
+form button{
+    height: 30px;
+    background-color: rgb(114, 208, 245);
+    border: none;
+    border-radius: 5px;
+    width: 50px;
+    color: white;
+}
+table{
+    margin: auto;
+    border-collapse: collapse;
+}
+tr{
+    height: 50px;
+}
+tr:nth-of-type(2n){
+    background-color: rgba(128, 128, 128, 0.09);
+}
+td img{
+    height: 20px;
+}
+tr td{
+    text-align: center;
+    border: 1px solid #dee2e6;
+    width: 50px;
+}
+tr td:nth-of-type(2){
+    padding: 10px;
+    width: fit-content;
+}
+tr td a{
+    opacity: 0.5;
+    transition: 500ms;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    margin: auto;
+}
+tr td a:hover{
+    opacity: 1;
+    background-color: #b4b7b9;
+}
