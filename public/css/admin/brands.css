@@ -40,6 +40,9 @@ h1{
     background-color: rgba(0,0,0,0.25);
     margin: 10px 0;
 }
+.split:last-of-type{
+    opacity: 0;
+}
 #add{
     color: rgb(85, 146, 238);
     float: right;

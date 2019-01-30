@@ -20,13 +20,16 @@
         <a href="<?=base_url('admin/works')?>">WORKS</a>
     </div>
 </nav>
-<form method="post">
+<?php isset($error) ? print_r($error) : ''?>
+<form method="post" action="<?=base_url('admin/brands/edit')?>" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="<?=$brand[0]->id?>">
     <div class="form-group">
-        <label for="brand">Brand</label> <input type="text" name="brand" id="brand" required>
+        <label for="brand">Brand</label> <input type="text" name="brand" id="brand" value="<?=$brand[0]->brand?>" required>
     </div>
     <div class="form-group">
-        <label for="image">Image</label> <input type="file" name="image" required>
+        <label for="image">Image</label> <input type="file" name="image">
     </div>
+    <img id="old_image" src="<?=base_url('public/images/').$brand[0]->image?>" alt="">
     <button>Edit</button>
 </form>
 </body>

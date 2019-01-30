@@ -23,53 +23,16 @@
 <div id="container">
     <h1>Brands</h1>
     <div id="brands">
-        <div class="brand"><img src="<?=base_url('public/images/')?>cowry-logo.jpg" alt="">
-            Cowry Asset Management
+        <?php foreach ($brands as $brand) : ?>
+        <div class="brand"><img src="<?=base_url('public/images/').$brand->image?>" alt="">
+            <?=$brand->brand?>
             <div class="links">
-                <a href="<?=base_url('admin/edit_brand')?>"><img src="<?=base_url('public/images/')?>pencil.svg" alt=""></a>
-                <a href="<?=base_url('admin/edit_brand')?>"><img src="<?=base_url('public/images/')?>delete.svg" alt=""></a>
+                <a href="<?=base_url('admin/edit_brand').'?edit='.$brand->id?>"><img src="<?=base_url('public/images/')?>pencil.svg" alt=""></a>
+                <a href="<?=base_url('admin/brands/delete/').$brand->id?>"><img src="<?=base_url('public/images/')?>delete.svg" alt=""></a>
             </div>
         </div>
         <div class="split"></div>
-        <div class="brand"><img src="<?=base_url('public/images/')?>cowry-logo.jpg" alt="">
-            Cowry Asset Management
-            <div class="links">
-                <a href="<?=base_url('admin/edit_brand')?>"><img src="<?=base_url('public/images/')?>pencil.svg" alt=""></a>
-                <a href="<?=base_url('admin/edit_brand')?>"><img src="<?=base_url('public/images/')?>delete.svg" alt=""></a>
-            </div>
-        </div>
-        <div class="split"></div>
-        <div class="brand"><img src="<?=base_url('public/images/')?>cowry-logo.jpg" alt="">
-            Cowry Asset Management
-            <div class="links">
-                <a href="<?=base_url('admin/edit_brand')?>"><img src="<?=base_url('public/images/')?>pencil.svg" alt=""></a>
-                <a href="<?=base_url('admin/edit_brand')?>"><img src="<?=base_url('public/images/')?>delete.svg" alt=""></a>
-            </div>
-        </div>
-        <div class="split"></div>
-        <div class="brand"><img src="<?=base_url('public/images/')?>cowry-logo.jpg" alt="">
-            Cowry Asset Management
-            <div class="links">
-                <a href="<?=base_url('admin/edit_brand')?>"><img src="<?=base_url('public/images/')?>pencil.svg" alt=""></a>
-                <a href="<?=base_url('admin/edit_brand')?>"><img src="<?=base_url('public/images/')?>delete.svg" alt=""></a>
-            </div>
-        </div>
-        <div class="split"></div>
-        <div class="brand"><img src="<?=base_url('public/images/')?>cowry-logo.jpg" alt="">
-            Cowry Asset Management
-            <div class="links">
-                <a href="<?=base_url('admin/edit_brand')?>"><img src="<?=base_url('public/images/')?>pencil.svg" alt=""></a>
-                <a href="<?=base_url('admin/edit_brand')?>"><img src="<?=base_url('public/images/')?>delete.svg" alt=""></a>
-            </div>
-        </div>
-        <div class="split"></div>
-        <div class="brand"><img src="<?=base_url('public/images/')?>cowry-logo.jpg" alt="">
-            Cowry Asset Management
-            <div class="links">
-                <a href="<?=base_url('admin/edit_brand')?>"><img src="<?=base_url('public/images/')?>pencil.svg" alt=""></a>
-                <a href="<?=base_url('admin/edit_brand')?>"><img src="<?=base_url('public/images/')?>delete.svg" alt=""></a>
-            </div>
-        </div>
+        <?php endforeach; ?>
     </div>
     <a href="<?=base_url('admin/add_brand')?>" id="add" >Add Brand</a>
 </div>

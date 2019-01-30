@@ -20,7 +20,8 @@
         <a href="<?=base_url('admin/works')?>">WORKS</a>
     </div>
 </nav>
-<form method="post">
+<?php isset($error) ? print_r($error) : ''?>
+<form method="post" action="<?=base_url('admin/brands/add')?>" enctype="multipart/form-data">
     <div class="form-group">
         <label for="brand">Brand</label> <input type="text" name="brand" id="brand" required>
     </div>

@@ -56,7 +56,11 @@ $route['works/(:num)'] = 'works/page/$1';
 $route['works/(:any)'] = 'works/work/$1';
 $route['admin'] = 'admin_home';
 $route['admin/(edit|add)_(:any)'] = 'admin_$2s/view/$1';
+//$route['admin/delete_(:any)'] = 'admin_$1s/delete';
 $route['admin/(:any)'] = 'admin_$1';
+$route['admin/(:any)/(:any)'] = 'admin_$1/$2';
+$route['admin/(:any)/(:any)/(:any)'] = 'admin_$1/$2/$3';
+
 $route['(home|about|products|works)'] = "$1";
 $route['(home|about|products|works)/(:any)'] = "$1/$2";
 $route['(:any)'] = "products/category/$1";
