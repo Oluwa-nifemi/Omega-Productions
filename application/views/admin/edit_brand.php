@@ -29,7 +29,7 @@
     <div class="form-group">
         <label for="image">Image</label> <input type="file" name="image">
     </div>
-    <img id="old_image" src="<?=base_url('public/images/').$brand[0]->image?>" alt="">
+    <img src="<?=base_url('public/images/').$brand[0]->image?>" id="old_image">
     <button>Edit</button>
 </form>
 </body>

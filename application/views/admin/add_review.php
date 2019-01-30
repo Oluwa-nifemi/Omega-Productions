@@ -20,7 +20,9 @@
         <a href="<?=base_url('admin/works')?>">WORKS</a>
     </div>
 </nav>
-<form method="post">
+<?php echo validation_errors(); ?>
+<?php isset($error) ? print_r($error) : ''?>
+<form method="post" action="<?=base_url('admin/reviews/add')?>" enctype="multipart/form-data">
     <div class="form-group">
         <label for="reviewer">Reviewer</label> <input type="text" name="reviewer" id="reviewer" required>
     </div>

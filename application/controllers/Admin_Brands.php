@@ -16,10 +16,12 @@ class Admin_Brands extends CI_Controller
         $this->load->model('Admin_Brands_Model','brandsmodel');
     }
 
-    public function index()
+    public function index($page = 1)
     {
-        $query = $this->db->get('brands');
-        $data['brands'] = $query->result();
+        $get = $this->brandsmodel->get($page);
+        $data['brands'] = $get['result'];
+        $data['pages'] = $get['pages'];
+        $data['page'] = $page;
         $this->load->view('admin\brands', $data);
     }
 
@@ -50,9 +52,12 @@ class Admin_Brands extends CI_Controller
                     $error = array('error' => $this->db->error());
                     $this->load->view('admin/add_brand', $error);
                 }
+            }else{
+                $error = array('error' => $this->upload->display_errors());
+                $this->load->view('admin/add_brand', $error);
             }
         }else{
-            $error = array('error' => $this->upload->display_errors());
+            $error = array('error' => $this->form_validation->error_array());
             $this->load->view('admin/add_brand', $error);
         }
     }
@@ -87,4 +92,7 @@ class Admin_Brands extends CI_Controller
         return $this->upload->do_upload('image');
     }
 
+    public function bypage($page){
+        $this->index($page);
+    }
 }

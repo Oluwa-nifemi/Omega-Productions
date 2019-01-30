@@ -20,10 +20,13 @@
         <a href="<?=base_url('admin/works')?>">WORKS</a>
     </div>
 </nav>
+<?php isset($errors) ? print_r($errors) : ''?>
+
 <div id="container">
-    <form action="">
-        <input type="text" name="category">
-        <button>Add</button>
+    <form method="post" action="<?=base_url('admin/categories/').(isset($_GET['edit']) && !empty($_GET['edit']) ? 'edit' : 'add')?>" enctype="multipart/form-data">
+        <input type="text" name="category" value="<?=isset($category) ? $category[0]->category : ''?>">
+        <input type="hidden" name="id" value="<?=isset($_GET['edit']) && !empty($_GET['edit']) ? $_GET['edit'] : ''?>">
+        <button><?=isset($_GET['edit']) && !empty($_GET['edit']) ? 'Edit' : 'Add'?></button>
     </form>
     <div id="categories">
         <table>
@@ -32,21 +35,13 @@
                 <td>Categories</td>
                 <td></td>
             </tr>
-            <tr>
-                <td><a href=""><img src="<?=base_url('public/images/')?>pencil.svg" alt=""></a></td>
-                <td>Business Cards</td>
-                <td><a href=""><img src="<?=base_url('public/images/')?>delete.svg" alt=""></a></td>
-            </tr>
-            <tr>
-                <td><a href=""><img src="<?=base_url('public/images/')?>pencil.svg" alt=""></a></td>
-                <td>Business Cards</td>
-                <td><a href=""><img src="<?=base_url('public/images/')?>delete.svg" alt=""></a></td>
-            </tr>
-            <tr>
-                <td><a href=""><img src="<?=base_url('public/images/')?>pencil.svg" alt=""></a></td>
-                <td>Business Cards</td>
-                <td><a href=""><img src="<?=base_url('public/images/')?>delete.svg" alt=""></a></td>
-            </tr>
+            <?php foreach ($categories as $category) : ?>
+                <tr>
+                    <td><a href="<?=base_url('admin/categories').'?edit='.$category->id?>"><img src="<?=base_url('public/images/')?>pencil.svg" alt=""></a></td>
+                    <td><?=$category->category?></td>
+                    <td><a href="<?=base_url('admin/categories/delete/').$category->id?>"><img src="<?=base_url('public/images/')?>delete.svg" alt=""></a></td>
+                </tr>
+            <?php endforeach; ?>
         </table>
     </div>
 </div>

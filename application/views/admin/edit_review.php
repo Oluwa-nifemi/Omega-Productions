@@ -20,16 +20,19 @@
         <a href="<?=base_url('admin/works')?>">WORKS</a>
     </div>
 </nav>
-<form method="post">
+<?php isset($error) ? print_r($error) : ''?>
+<form method="post" action="<?=base_url('admin/reviews/edit')?>" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="<?=$review[0]->id?>">
     <div class="form-group">
-        <label for="reviewer">Reviewer</label> <input type="text" name="reviewer" id="reviewer" required>
+        <label for="reviewer">Reviewer</label> <input type="text" name="reviewer" id="reviewer" value="<?=$review[0]->name?>" required>
     </div>
     <div class="form-group">
-        <label for="review">Review</label> <input type="text" name="review" id="review" required>
+        <label for="review">Review</label> <input type="text" name="review" id="review" value="<?=$review[0]->review?>" required>
     </div>
     <div class="form-group">
-        <label for="image">Image</label> <input type="file" name="image" required>
+        <label for="image">Image</label> <input type="file" name="image">
     </div>
+    <img src="<?=base_url('public/images/').$review[0]->image?>" id="old_image">
     <button>Edit</button>
 </form>
 </body>

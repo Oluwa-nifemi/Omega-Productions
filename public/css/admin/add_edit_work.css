@@ -43,3 +43,29 @@ form button{
     float: right;
     margin-right: 15%;
 }
+.old_image{
+    width: 60%;
+    margin: 80px auto;
+    display: block;
+    position: relative;
+}
+.old_image button{
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    height: 40px;
+    background-color: rgba(225, 225, 225, 0.33);
+    border: none;
+    width: 40px;
+    outline: none;
+}
+.old_image img{
+    width: 100%;
+}
+.old_image button img{
+    height: 20px;
+    margin: 0;
+}

@@ -20,7 +20,9 @@
         <a href="<?=base_url('admin/works')?>">WORKS</a>
     </div>
 </nav>
-<form method="post">
+<?php echo validation_errors(); ?>
+<?php isset($error) ? print_r($error) : ''?>
+<form method="post" action="<?=base_url('admin/works/add')?>" enctype="multipart/form-data">
     <div class="form-group">
         <label for="jobname">Job Name</label> <input type="text" name="jobname" id="jobname" required>
     </div>
@@ -28,7 +30,7 @@
         <label for="description">Description</label> <textarea name="description" id="description" required></textarea>
     </div>
     <div class="form-group">
-        <label for="image">Image</label> <input type="file" name="image" multiple required>
+        <label for="image">Image</label> <input type="file" name="images[]" multiple required>
     </div>
     <button>Add</button>
 </form>

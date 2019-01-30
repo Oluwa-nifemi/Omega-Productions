@@ -23,7 +23,6 @@ h1{
     justify-content: center;
     align-items: center;
     padding: 8px;
-    margin-left: auto;
     margin-right: 10px;
 }
 .work a img{
@@ -43,4 +42,7 @@ h1{
     float: right;
     font-size: 1.1em;
     font-family: 'Raleway' , sans-serif;
+}
+.links {
+    margin-left: auto;
 }
