@@ -20,14 +20,16 @@
         <a href="<?=base_url('admin/works')?>">WORKS</a>
     </div>
 </nav>
-<form>
+<?php echo validation_errors(); ?>
+<?php isset($error) ? print_r($error) : ''?>
+<form method="post" action="<?=base_url('admin/products/add')?>" enctype="multipart/form-data">
     <div class="form-group">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name">
     </div>
     <div class="form-group">
         <label for="display_image">Display Image</label>
-        <input type="file" id="display_image" name="display_image">
+        <input type="file" id="display_image" name="image">
     </div>
     <div class="form-group details-group">
         <label for="details">Details</label>
@@ -37,7 +39,7 @@
     </div>
     <div class="form-group" id="prices">
         <label>Prices</label>
-        <input name="price" type="hidden" id="price">
+        <input name="prices" type="hidden" id="price">
         <button type="button" class="add-price"><img src="<?=base_url('public/images/')?>plus.svg" alt=""></button>
     </div>
     <button id="submitBtn">Add</button>
@@ -160,7 +162,7 @@
                 document.getElementById(edit).dataset.value = JSON.stringify(priceType)
                 document.getElementById(edit).value = priceType.name;
                 prices[index] = priceType; //Set change the value in prices array
-                document.querySelector('.modal-container button').innerHTML = 'Add' //Reset text of modal container
+                document.querySelector('.modal-container .add').innerHTML = 'Add' //Reset text of modal container
                 modalContainer.classList.remove('edit') //Remove edit class
             }else{
                 //Create elements
@@ -172,6 +174,7 @@
                 input.value = priceType.name;
                 //Set id of input and make it disabled
                 input.id = 'price-' + prices.length;
+                input.type = 'text';
                 input.disabled = true;
                 //Set class,type and target of button
                 button.dataset.target = 'price-' + prices.length;
@@ -185,7 +188,7 @@
                 //Add click event listener to fire of edit function
                 button.addEventListener('click',() => {
                     showModal(generated.children[1].dataset.target)
-                })
+                });
                 //Append elements to prices div
                 pricesDiv.appendChild(generated);
                 pricesDiv.appendChild(addPrice);
@@ -198,13 +201,13 @@
         }else{
             alert('Please fill in prices') //Show error message
         }
-    })
+    });
     addPrice.addEventListener('click',() => {
         modalContainer.classList.add('active') //Make modal visible
-    })
+    });
     document.querySelector('.close-modal').addEventListener('click',() => {
         modalContainer.classList.remove('active') //Hide modal
-    })
+    });
     const showModal = (target) => {
         modalContainer.classList.add('active'); //Make modal visible
         modalContainer.classList.add('edit'); //Add edit class to modal
@@ -215,45 +218,46 @@
         priceType.prices.forEach((e,index) => {
             document.querySelectorAll('.input-section')[index].children[1].value = e.quantity
             document.querySelectorAll('.input-section')[index].children[4].value = e.price
-        })
-        document.querySelector('.modal-container button').innerHTML = 'Edit' //Change text of button
-    }
+        });
+        document.querySelector('.modal-container .add').innerHTML = 'Edit' //Change text of button
+    };
     document.querySelector('.add-detail').addEventListener('click',() => {
         const detail = document.querySelector('#details').value;
         if(detail){
-            const div = document.createElement('div')
-            div.classList.add('detail')
-            const input = document.querySelector('input');
+            const div = document.createElement('div');
+            div.classList.add('detail');
+            const input = document.createElement('input');
             input.disabled = true;
             input.id = 'detail-' + details.length;
+            input.type = 'text';
             const button = document.createElement('button');
             button.innerHTML = '<img src="<?=base_url('public/images/')?>pencil.svg">';
             button.classList.add('edit-detail');
-            button.type = 'button'
+            button.type = 'button';
             button.addEventListener('click',() => {
                 input.disabled = false;
                 div.classList.add('edit')
-            })
+            });
             const save = document.createElement('button');
             save.innerHTML = '<img src="<?=base_url('public/images/')?>tick.svg">';
-            save.classList.add('save-detail')
-            save.type = 'button'
+            save.classList.add('save-detail');
+            save.type = 'button';
             const target = details.length;
             save.addEventListener('click',() => {
                 details[target] = input.value;
                 input.disabled = true;
                 div.classList.remove('edit');
                 document.querySelector('#details + input').value = JSON.stringify(details)
-            })
+            });
             const deleteBtn = document.createElement('button');
             deleteBtn.innerHTML = '<img src="<?=base_url('public/images/')?>delete.svg">';
             deleteBtn.classList.add('delete-detail')
             deleteBtn.type = 'button';
             deleteBtn.addEventListener('click',() => {
                 details.splice(target,1);
-                document.querySelector('#details + input').value = JSON.stringify(details)
+                document.querySelector('#details + input').value = JSON.stringify(details);
                 div.remove()
-            })
+            });
             input.value = detail;
             div.appendChild(input);
             div.appendChild(button);

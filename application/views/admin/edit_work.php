@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="<?=base_url('public/css/admin/')?>add_edit_work.css">
 </head>
 <body>
+
 <nav>
     <a id="logo" href="<?=base_url('admin')?>"><img src="<?=base_url('public/images/')?>logo.png"></a>
     <div id="nav-links">
@@ -20,6 +21,8 @@
         <a href="<?=base_url('admin/work')?>">WORKS</a>
     </div>
 </nav>
+<?php echo validation_errors(); ?>
+<?php isset($error) ? print_r($error) : ''?>
 <form method="post" action="<?=base_url('admin/works/edit')?>" enctype="multipart/form-data">
     <div class="form-group">
         <label for="jobname">Job Name</label> <input type="text" name="jobname" id="jobname" value="<?=$work[0]->name?>" required>

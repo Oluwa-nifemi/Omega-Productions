@@ -20,6 +20,7 @@
         <a href="<?=base_url('admin/works')?>">WORKS</a>
     </div>
 </nav>
+<?php echo validation_errors(); ?>
 <?php isset($error) ? print_r($error) : ''?>
 <form method="post" action="<?=base_url('admin/brands/edit')?>" enctype="multipart/form-data">
     <input type="hidden" name="id" value="<?=$brand[0]->id?>">

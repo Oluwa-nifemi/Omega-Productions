@@ -20,6 +20,8 @@
         <a href="<?=base_url('admin/works')?>">WORKS</a>
     </div>
 </nav>
+<?php echo validation_errors(); ?>
+<?php isset($error) ? print_r($error) : ''?>
 <form>
     <div class="form-group">
         <label for="name">Name:</label>

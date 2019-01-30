@@ -169,7 +169,7 @@ button img{
     border: none;
     border-radius: 0;
     background: transparent;
-    width: auto;
+    margin-right: auto;
 }
 .detail.edit input{
     background-color: white;
