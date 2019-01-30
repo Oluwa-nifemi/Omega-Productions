@@ -20,6 +20,7 @@
         <a href="<?=base_url('admin/works')?>">WORKS</a>
     </div>
 </nav>
+<?php echo validation_errors(); ?>
 <?php isset($error) ? print_r($error) : ''?>
 <form method="post" action="<?=base_url('admin/brands/add')?>" enctype="multipart/form-data">
     <div class="form-group">
